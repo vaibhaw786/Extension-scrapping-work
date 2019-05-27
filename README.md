@@ -8,3 +8,13 @@ the goal would be to have a list of shows going on sale we would not be worried 
 One other thing would be. Say for members of this list. Once the show goes on sale. If we don’t have the password and say was able to get it a few minutes after it went on sale we would want to be able to give those customers an alert a new password was added. Email might be the easiest way. That’s what showsonsale.com does  
 Also I a member canceled would need to take away access to the list  
 Another thing to think of would be trying to limit it so only one account could be signed in at a time so people couldn’t share account
+
+
+
+
+
+Credential 
+
+[11:09 PM, 5/10/2019] Daniel: https://sso.godaddy.com/?realm=idp&path=%2Fproducts&app=account
+[11:09 PM, 5/10/2019] Daniel: log in danmahoney17
+[11:09 PM, 5/10/2019] Daniel: and password is Baseball17

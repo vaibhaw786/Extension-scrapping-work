@@ -13,8 +13,3 @@ Another thing to think of would be trying to limit it so only one account could 
 
 
 
-Credential 
-
-[11:09 PM, 5/10/2019] Daniel: https://sso.godaddy.com/?realm=idp&path=%2Fproducts&app=account
-[11:09 PM, 5/10/2019] Daniel: log in danmahoney17
-[11:09 PM, 5/10/2019] Daniel: and password is Baseball17

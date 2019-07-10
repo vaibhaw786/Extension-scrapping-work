@@ -1,0 +1,628 @@
+p,
+a,
+li,
+td,
+th,
+body,
+html,
+div {
+    font-family: 'Encode Sans', sans-serif !important;
+}
+
+.Apilogin {
+    background: rgba(70, 72, 157, 1);
+    background: -moz-linear-gradient(left, rgba(70, 72, 157, 1) 0%, rgba(0, 170, 193, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(70, 72, 157, 1)), color-stop(100%, rgba(0, 170, 193, 1)));
+    background: -webkit-linear-gradient(left, rgba(70, 72, 157, 1) 0%, rgba(0, 170, 193, 1) 100%);
+    background: -o-linear-gradient(left, rgba(70, 72, 157, 1) 0%, rgba(0, 170, 193, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(70, 72, 157, 1) 0%, rgba(0, 170, 193, 1) 100%);
+    background: linear-gradient(to right, rgba(70, 72, 157, 1) 0%, rgba(0, 170, 193, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#46489d', endColorstr='#00aac1', GradientType=1);
+}
+
+.ApiKeysEnter {
+    width: 100% !important;
+    border-radius: 24px;
+    margin: 0 0 !important;
+}
+
+tr th input {
+    width: 100%;
+}
+
+table {
+    margin-bottom: 50px !important;
+}
+
+.ApiKeysEnter input {
+    color: #fff !important;
+    border-radius: 24px;
+    border: 1px solid transparent;
+    background: rgba(212, 212, 212, 0.4) !important;
+}
+
+.ApiKeysEnter input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #fff;
+}
+
+.ApiKeysEnter input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #fff;
+}
+
+.ApiKeysEnter input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #fff;
+}
+
+.ApiKeysEnter input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #fff;
+}
+
+.tabbingbox li {
+    position: relative !important;
+}
+
+.tabbingbox li i {
+    position: absolute !important;
+    right: 14px;
+    top: -1px;
+}
+
+tr:hover .showview {
+    color: #1E1F8E;
+}
+
+.showview {
+    float: right;
+    color: #dac5c5;
+    -webkit-transition: color 2s;
+    /* Safari */
+    transition: color 2s;
+}
+
+.validationext {
+    margin: 1em auto;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 300px;
+    text-align: center;
+    color: #1E1F8E;
+}
+
+.tabbingbox li i {
+    display: none;
+}
+
+.chkedboxfav {
+    color: #4447B1;
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+    top: 41px;
+    right: 0;
+    float: right;
+}
+
+.logosdatashow {
+    position: absolute;
+    top: 13px;
+    margin-left: 9em;
+    font-size: 2.6em;
+    font-weight: bold;
+    color: #4447B1;
+}
+
+.mainlogo {
+    position: relative;
+}
+
+.Apilogin {
+    position: relative;
+}
+
+.submitbuttonapi {
+    position: absolute;
+    right: 20px;
+}
+
+.submitbuttonapi input {}
+
+.circle i {
+    min-height: 36px !important;
+    border-radius: 22px !important;
+    font-size: 21px !important;
+    padding-top: 9px !important;
+    border: 1px solid #D4D4D4 !important;
+}
+
+.inactivebookmark {
+    color: #D4D4D4 !important;
+    background: transparent !important;
+}
+
+.innerboxdataboxvalue {
+    padding: 0 4px !important;
+}
+
+.innerboxleft>.panel.panel-default {
+    background: #4447B1;
+}
+
+.innerboxtotal>.panel.panel-default {
+    background: #E79E22;
+}
+
+.panel-default>.panel-heading {
+    background-color: transparent !important;
+    border-bottom: 1px solid #c39292 !important;
+}
+
+.innerboxleft .panel.panel-default {
+    color: #00B1FF !important;
+    border-radius: 9px !important;
+    border: 1px solid #393B9B !important;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 600;
+}
+
+html body .innerboxleft .panel-default>.heading1,
+html body .innerboxleft .panel-default>.heading2 {
+    padding: 7px 0px !important;
+    border-radius: 0px !important;
+    color: #00B1FF !important;
+    text-transform: capitalize;
+}
+
+html body .innerboxleft .panel-default>.heading2 {
+    color: #fff !important;
+}
+
+html body .innerboxleft .panel-default>.heading2 .panel-body b {
+    color: #393B9B !important;
+}
+
+body .panel-heading {
+    padding: 8px 15px !important;
+    text-transform: capitalize !important;
+}
+
+.innerboxtotal .panel-body b {
+    color: #393B9B !important;
+    font-weight: bolder !important;
+}
+
+body table tr:first-child th {
+    border-bottom: 2px solid #00B1FF !important;
+}
+
+body table tr:first-child th button {
+    font-size: 12px !important;
+}
+
+table {
+    transition: all 2s;
+}
+
+body {
+    padding: 0 0px;
+}
+
+.Extensionsdata {
+    width: 550px;
+    padding: 10px;
+}
+
+.apikeybutton {
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    border: 02px solid #e2d6a3 !important;
+}
+
+.btnboxd {
+    background: url(bgbtn.png);
+    border: 1px solid #d2b95f;
+}
+
+
+/* width */
+
+ ::-webkit-scrollbar {
+    width: 3px;
+    height: 50px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: #393B9B;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.result {
+    padding-top: 0px;
+    clear: both;
+    text-align: center;
+}
+
+.table>tbody>tr>td {
+    -webkit-transition: background 2s;
+    /* Safari */
+    transition: background 2s;
+    border: 1px solid #46479d;
+    text-align: center;
+    text-transform: uppercase
+}
+
+.eventIDEnter {
+    position: relative;
+    margin: 0 18px;
+}
+
+.eventIDEnter input {
+    border: 1px solid #A2A2A2;
+    position: absolute;
+    top: 0px;
+}
+
+.eventIDEnter .submitbutton:hover {
+    border: 2px solid #393B9B;
+    background: #393B9B !IMPORTANT;
+}
+
+input.start {
+    background: #393B9B !IMPORTANT;
+    color: #fff !important;
+    border: 0px;
+    border-radius: 10px;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    padding: 5px !important;
+}
+
+.panel-body {
+    padding: 7px;
+}
+
+body th button {
+    border: 0px !important;
+    padding: 0px !important;
+    background: transparent !Important;
+}
+
+.eventIDEnter .submitbutton {
+    width: 120px;
+    right: 0px;
+    text-transform: uppercase;
+    background: #e89d22;
+    color: #fff !IMPORTANT;
+    border: 2px solid #e89d22;
+}
+
+.heading2 {
+    color: #fff !IMPORTANT;
+    border-radius: 0px;
+    !important;
+    text-transform: uppercase
+}
+
+.heading1 {
+    border-radius: 21px;
+    background: #393B9B !IMPORTANT;
+    color: #fff !important;
+    text-transform: uppercase
+}
+
+.panel-body {
+    border-top: 0px solid !important;
+    font-weight: bold;
+    font-family: Encode sans-serif !important;
+    font-size: 1.6em;
+}
+
+.panel.panel-default {
+    border-radius: 7px;
+    border: 0px solid #393B9B !important;
+}
+
+.red {
+    background: #fff !important;
+    border: 1px solid #46479d !important;
+}
+
+.yellow {}
+
+td {
+    color: #636363 !important;
+}
+
+.delkey a {
+    color: #000 !IMPORTANT;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.delkey {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 10px;
+}
+
+.msgsss {
+    font-size: 11px;
+    color: red;
+    font-weight: bold;
+}
+
+th {
+    font-weight: 500;
+    color: #000 !important;
+    text-align: center !important;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+}
+#loadering {
+    margin-top: -10px;
+    height: 4px;
+}
+#loadering span {
+    height: 3px;
+    -webkit-transition: width 30s;
+    /* Safari */
+    
+    transition: width 30s;
+    display: block;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#46479d+0,46479d+31,00acc1+100 */
+    
+    background: #393B9B;
+    /* Old browsers */
+    
+    border: 1px solid #393B9B;
+}
+#loadering span.full {
+    width: 100%;
+    -webkit-transition: width 30s;
+    /* Safari */
+    
+    transition: width 30s;
+}
+#loadering span.low {
+    width: 0%;
+    -webkit-transition: width 30s;
+    /* Safari */
+    
+    transition: width 30s;
+}
+button {
+    width: 100%;
+    border: 0px;
+    font-weight: bold;
+}
+.table>tbody>tr>th {
+    padding: 0px;
+}
+#loadering,
+#loadering span {
+    position: fixed;
+    z-index: 100000000;
+    bottom: 0px;
+}
+input.form-control.btn.btn-success.apikeybutton:hover {
+    border: 0px !important;
+    color: #fff !important;
+}
+input.form-control.btn.btn-success.apikeybutton {
+    border: 0px !important;
+    color: #fff;
+    background: #E79E22 !IMPORTANT;
+    border-radius: 24px;
+}
+table tr:hover td {
+    background: #00ACC1 !important;
+    color: #fff !important;
+}
+th button,
+th {
+    /*background: #e89d22 !important;*/
+    
+    color: #393B9B !important;
+    border: 1px solid #fff;
+    padding: 7px 0;
+}
+.eventIDEnter {
+    display: none;
+}
+.tabbingdatavalue {
+    position: fixed;
+    bottom: 2px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/*CSS by Aastha*/
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 25px
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 21px;
+    width: 21px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked+.slider {
+    background-color: #46479d;
+}
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.tabbingdatavalue {
+    background: #1e1f8e;
+    /* Old browsers */
+    
+    background: -moz-linear-gradient(left, #1e1f8e 0%, #3e53a1 46%, #00acc1 100%);
+    /* FF3.6-15 */
+    
+    background: -webkit-linear-gradient(left, #1e1f8e 0%, #3e53a1 46%, #00acc1 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    
+    background: linear-gradient(to right, #1e1f8e 0%, #3e53a1 46%, #00acc1 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1e1f8e', endColorstr='#00acc1', GradientType=1);
+    /* IE6-9 */
+}
+.tabbingbox {
+    padding: 0px !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.tabbingbox li {
+    list-style: none;
+    padding: 10px 0;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#46479d+0,46479d+31,00acc1+100 */
+    
+    background: transparent !important;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.tabbingbox li.active {
+    background: #ffffff2b;
+}
+.tabbingbox li:hover {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e89d22+0,a7bf38+100 */
+    
+    background: #F49C04;
+    /* Old browsers */
+}
+.CoounterData,
+.Favourites {
+    display: none;
+    min-height: 34em;
+}
+.CoounterData.active,
+.Favourites.active {
+    display: block;
+}
+.Favourites tr td input,
+.Favourites tr td select {
+    color: #000;
+    min-width: 5em;
+}
+.stop {
+    background: #F49C04;
+    color: #fff !important;
+    border: 0px;
+    border-radius: 10px;
+}
+td {
+    cursor: pointer;
+}
+.delkey a i {
+    font-size: 1.6em;
+    color: #46479d;
+}
+.switch {
+    margin-right: 6px;
+}
+.table>tbody>tr>th,
+.table>tbody>tr>td {
+    border: 0px solid #0000000d !important;
+    font-size: 0.9em !important;
+}
+i.btn.btn-info.fa {
+    background: ##00ACC1 !IMPORTANT;
+}
+.findalleventcounter {
+    background: #F49C04;
+    color: #fff !important;
+    border: 0px;
+    border-radius: 10px;
+    padding: 0.2em 2em;
+}
+#from,
+#to {
+    border-radius: 16px;
+    border: 1px solid #35378424;
+    width: 10em;
+}
+.loadinmainpage {
+    padding-top: 5em;
+}
+.loadinmainpage img {
+    width: 7em;
+}
+.counterform {
+    margin: 0 auto;
+    width: 89%;
+}
+.counterform>div {
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 8px;
+}

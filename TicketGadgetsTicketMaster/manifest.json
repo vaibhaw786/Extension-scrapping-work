@@ -1,0 +1,50 @@
+{
+    "name": "Ticket Gadgets Ticketmaster",
+    "icons": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "version": "1.1.0",
+    "commands": {
+        "_execute_browser_action": {
+            "description": "Opens popup.html",
+            "suggested_key": {
+                "mac": "MacCtrl+Shift+F",
+                "default": "Ctrl+Shift+F"
+            }
+        }
+    },
+    "description": "Ticketmaster and Live Nation counter with unlimited checks.",
+    "permissions": [
+        "cookies",
+        "*://*.livenation.com/event/*",
+        "*://*.livenation.ca/event/*",
+        "*://*.livenation.com/*/event/*",
+        "*://*.livenation.ca/*/event/*",
+        "*://*.ticketmaster.com/*/event/*",
+        "*://*.ticketmaster.com/event/*",
+        "*://*.ticketmaster.ca/*/event/*",
+        "*://*.ticketmaster.ca/event/*",
+        "*://my.ticketmaster.com/*",
+        "*://my.ticketmaster.ca/*",
+        "*://my.livenation.com/*",
+        "*://my.livenation.ca/*",
+        "https://*.ticketweb.com/*",
+        "https://*.ticketweb.ca/*",
+        "https://*.stubhub.com/*",
+        "storage",
+        "http://*/*",
+        "https://*/*",
+        "tabs",
+        "*://ticketgadgets.com/",
+        "*://www.ticketgadgets.com/",
+        "<all_urls>"
+    ],
+    "browser_action": {
+        "default_icon": "icon128.png",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2
+}

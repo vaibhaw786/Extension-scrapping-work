@@ -1,0 +1,21 @@
+{
+  "name": "ofertabandido-translation-service",
+  "version": "1.0.0",
+  "description": "OfertaBandido Translation Service",
+  "main": "microservice.js",
+  "dependencies": {"multiparty": "4.2.1"},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JoeyBurzynski/oferta-bandido.git"
+  },
+  "author": "Joey Burzynski <joey@marketkarma.com> (https://github.com/marketkarma)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoeyBurzynski/oferta-bandido/issues"
+  },
+  "homepage": "https://github.com/JoeyBurzynski/oferta-bandido#readme"
+}

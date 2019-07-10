@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+
+<head>
+    <title>Ticket List Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="customjs.js"></script>
+    <script src="background.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+</head>
+
+<body style="width:600px;">
+    <div id='message' style="display: none;">Injecting Script....</div>
+    <div id='messagedate' style="display: none;">Injecting Script....</div>
+    <div ng-if="LockedShow==1">
+        <h2 class="validationext">Please click this extension on a Ticketmaster or Live Nation event page.</h2>
+    </div>
+    <div ng-if="LockedShow==0">
+        <div id="loadering">
+            <span class="low"></span>
+        </div>
+        <div ng-if="loadershowfirst==1">
+            <center>
+                <img width="50" src="loader.gif">
+            </center>
+        </div>
+        <div class="Apilogin" style="width:600px; padding: 20px 20px;" ng-if="Apivalid==false">
+            <div class="ApiKeysEnter col-lg-8 col-sm-8 col-md-8 col-xs-8">
+                <input class=" form-control" type="text" placeholder="Enter License" autocomplete="off" ng-model="dataAPI" id="dataAPI">
+            </div>
+            <div class="submitbuttonapi col-lg-4 col-sm-4 col-md-4 col-xs-4">
+                <input class=" form-control btn btn-success apikeybutton" type="button" value="Enter" ng-click="saveApi()">
+            </div>
+            <hr> <span class="msgsss">
+        {{errormsg}}
+      </span>
+            <div style="clear:both;"></div>
+        </div>
+        <div ng-if="Apivalid==true" style="width:600px; ">
+            <div class="mainlogo">
+                <center>
+                    <div class="logosdatashow">Ticketmaster/Live Nation</div>
+                    <img style="width: 100%; " src="logo.png">
+                </center>
+            </div>
+            <div class="delkey">
+                <a ng-click="deleteApi()"><i class="fa fa-trash"></i></a>
+            </div>
+            <div class="tabbingdatavalue">
+                <ul class="tabbingbox">
+                    <li ng-click="opencounter()" ng-class='{ div: 1, active: tabclass1 }'>Counter</li>
+                    <li ng-click="Favourites()" ng-class='{ div: 1, active: tabclass2 }'>Favorite <i class="activebookmark  fa fa-bookmark"></i></li>
+                </ul>
+            </div>
+            <div ng-class='{ CoounterData: true, active: tabclass1 }'>
+                <div class="eventIDEnter ">
+                    <input class="form-control" placeholder="Enter Event ID" ng-model="eventID" type="text" id="eventID">
+                    <input class="submitbutton form-control btn btn-success btnboxd" type="button" value="Submit" ng-click="getSeats()">
+                </div>
+                <div style="width:600px;">
+                    <div ng-if="loadershow==1" class="loadinmainpage">
+                        <center><img src="loader.gif"></center>
+                    </div>
+                    <div ng-if="myWelcome.facets && loadershow==0" class="result">
+                        <!-- Is Favourites Button -->
+                        <div class="chkedboxfav ">Favorite
+                            <a title="Favourite" ng-click="setFavourites('save',1)" class="circle activate" ng-if="isFavourite==1"><i
+                  class="activebookmark btn btn-info  fa fa-bookmark"></i></a>
+                            <a title="Not Favorite" ng-click="setFavourites('save',0)" class="circle deactivate" ng-if="isFavourite==0"><i class="inactivebookmark btn btn-success fa fa-bookmark"></i></a>
+                        </div>
+                        <!-- Is Favourites Button -->
+                        <div style="height: 20px !important; clear: both;"></div>
+                        <div class="innerboxdataboxvalue innerboxleft col-md-3 col-lg-3 col-sm-3 col-xs-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading heading1">Total Resale</div>
+                                <div class="panel-body">{{Resale}}</div>
+                            </div>
+                        </div>
+                        <div class="innerboxdataboxvalue innerboxleft  col-md-3 col-lg-3 col-sm-3 col-xs-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading heading1">Total Primary</div>
+                                <div class="panel-body">{{Primary}}</div>
+                            </div>
+                        </div>
+                        <div class="innerboxdataboxvalue innerboxtotal col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading heading2">Total Number Available</div>
+                                <div class="panel-body"><b>{{Resale+Primary}}</b></div>
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <table class="table table-striped">
+                            <tr>
+                                <th><button ng-click="sortBy('section')">Section</button>
+                                    <span class="sortorder" ng-show="propertyName === 'section'" ng-class="{reverse: reverse}"></span>
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('count')"># of Ticket</button>
+                                    <span class="sortorder" ng-show="propertyName === 'count'" ng-class="{reverse: reverse}"></span>
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('inventoryTypes[0]')">Type</button>
+                                    <span class="sortorder" ng-show="propertyName === 'inventoryTypes[0]'" ng-class="{reverse: reverse}"></span>
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('listPriceRange[0].min')">Min (USD)</button>
+                                    <span class="sortorder" ng-show="propertyName === 'listPriceRange[0].min'" ng-class="{reverse: reverse}"></span>
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('listPriceRange[0].max')">Max (USD)</button>
+                                    <span class="sortorder" ng-show="propertyName === 'listPriceRange[0].max'" ng-class="{reverse: reverse}"></span>
+                                </th>
+                            </tr>
+                            <tr ng-repeat="i in myWelcome.facets | orderBy:propertyName:reverse">
+                                <td class="red">{{i.section}}</td>
+                                <td class="red">{{i.count}}</td>
+                                <td class="red">{{i.inventoryTypes[0]}}</td>
+                                <td class="red">{{i.listPriceRange[0].min}}</td>
+                                <td class="red">{{i.listPriceRange[0].max}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div ng-class='{ Favourites: true, active: tabclass2 }'>
+                <div ng-if='fabCounter==0'>
+                    <table class="table table-striped">
+                        <tr>
+                            <th></th>
+                            <th width="30%">Event Name</th>
+                            <th>Date</th>
+
+                            <th>Counter</th>
+                            <th>Counter Action</th>
+                        </tr>
+                        <tr ng-repeat='i in allfavouritesevent.data'>
+                            <td><i ng-click="OpendataCounter(i.api_key,i.event_id)" ng-if="i.auto_status==1" class="fa fa-eye showview"></i></td>
+                            <td ng-if="i.EventTitle.length>0"><a class="favtitlesshow" ng-click="OpenNewTab(i.url)" title="{{i.EventTitle}}" href="{{i.url}}">{{i.EventTitle | limitTo: 25 }}{{i.EventTitle.length > 25 ? '...' : ''}} </a></td>
+                            <td ng-if="i.EventTitle.length==0"><a class="favtitlesshow" ng-click="OpenNewTab(i.url)" title="{{i.event_id}}" href="{{i.url}}">{{i.event_id}} </a> </td>
+                            <td><a class="favtitlesshow">{{i.starttime}}</a></td>
+                            <td>
+                                <select ng-model="timer[i.ids]" ng-if="i.auto_status==0">
+                  <option  value="30">30min</option>
+                  <option value="1">1h</option>
+                  <option value="2">2h</option>
+                  <option value="5">5h</option>
+                  <option value="12">12h</option>
+                  <option value="24">24h</option>
+                </select>
+                                <div ng-if="i.auto_status==1">{{i.auto_period}}{{i.auto_period_time}}</div>
+                            </td>
+                            <td>
+                                <input ng-if="i.auto_status==0" ng-click="startcounter(i.api_key,i.event_id,i.ids)" type="button" class="start" value="Start">
+                                <input ng-if="i.auto_status==1" ng-click="stopecounter(i.api_key,i.event_id)" type="button" class="stop" value="Stop">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div ng-if='fabCounter==1'>
+                    <div class="counterform" ng-init="getdataFatchAllCounter()">
+                        <div><a ng-click="Favourites()" class="findalleventcounter backbtn"><i
+                  class="fa fa-caret-square-o-left"></i> back </a>In order to get the data , kindly select the date range
+                        </div>
+                        <label for="from">From</label>
+                        <input autocomplete="off" type="text" value='' id="from" name="from">
+                        <label for="to">to</label>
+                        <input autocomplete="off" type="text" value='' id="to" name="to">
+                        <input class="findalleventcounter" type="button" value="Find" ng-click="getdataFatchAllCounter()">
+                    </div>
+                    <div ng-if="OpendataCounterData.wholedata">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>DateTime</th>
+                                <th>Counter</th>
+                                <th>Resale</th>
+                                <th>Primary</th>
+                            </tr>
+                            <tr ng-repeat="k in OpendataCounterData.wholedata" ng-click="openFullData(k.id)">
+                                <td>{{k.Datetime}}</td>
+                                <td>{{k.countsdata}}</td>
+                                <td>{{k.resale}}</td>
+                                <td>{{k.primary}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div ng-if='openFullDataOpen==1'>
+                    <pre>{{GetCronJobSingleData|json}}</pre>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

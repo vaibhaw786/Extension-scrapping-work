@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+    <head>
+        <title>Please input Ticketmaster Google Chrome Extension License</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="css/custom.css"></link>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="js/popup.js"></script>
+        
+    </head>
+    <body>
+        <div class="errormsgtab" ng-if="LockedShow==1">Please click this extension on an Axs event page.</div>
+
+        <div ng-if="LockedShow==0">
+        <div id="loadering">
+            <span class="low"></span>
+        </div>
+        <div ng-If="loadershowfirst==1" class="loadershowing">
+            <center>
+            <img width="50" src="loader.gif" >
+            </center>
+        </div>
+        <div class="Apilogin ApiKeysEnter apikeybox" ng-if="resultdatadata==0 && loadershowfirst==0">
+            <input class="col-xs-12 form-control" type="text" placeholder="Enter License" ng-model="dataAPI" id="dataAPI">
+            <br><input class="col-xs-12 form-control btn btn-success apikeybutton" type="button" value="Enter" ng-click="saveApi()">
+            <a ng-if="errormsg" class="errormsgsss">{{errormsg}}</a>
+            <div style="clear:both;"></div>
+        </div>
+        <div ng-if="resultdatadata==1" class="resultdata">
+            <div class="logosdatashow">Axs</div>
+            <img style="width:100%;" src="logo.png"><div class="delkey"><a ng-click="deleteApi()"><i class="fa fa-trash"></i></a></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-12" id="result">
+                        <center ng-if="!result"><img width="50" src="loader.gif"></center>
+                        
+                        <div class="importantnote">Note : Please reload the page before checking a new event. </div>
+                        <div ng-if="result" class="filterchk">
+                            <input placeholder="Filter your Seats" class="form-control" ng-model="search"><hr>
+                        <a class="salebutton col-lg-4 col-sm-4 col-md-4 col-xs-4" ng-class="{active : activeMenu === 'onsale'}" ng-click="getresultdata('onsale')">Primary</a>
+                        <a class="salebutton col-lg-4 col-sm-4 col-md-4 col-xs-4" ng-class="{active : activeMenu === 'resale'}" ng-click="getresultdata('resale')">Resale</a>
+                        <a class="salebutton refreshpage col-lg-4 col-sm-4 col-md-4 col-xs-4"  ng-click="pagerefresh()">Reload</a>
+                            <hr>
+                            <table class="table" >
+                                <tr>
+                                    <th>
+                                        <button ng-click="sortBy('sectionLabel')">Section</button>
+                                        <span class="sortorder" ng-show="propertyName === 'sectionLabel'" ng-class="{reverse: reverse}"></span>
+                                    </th>
+                                    <th ng-if="labels==1"><button ng-click="sortBy('label')">Place Name</button>
+                                    <span class="sortorder" ng-show="propertyName === 'label'" ng-class="{reverse: reverse}"></th>
+                                    <th ng-if="prices==1"><button ng-click="sortBy('price')">Price</button>
+                                    <span class="sortorder" ng-show="propertyName === 'price'" ng-class="{reverse: reverse}"></th>
+                                    <th><button ng-click="sortBy('seats')">Seats</button>
+                                    <span class="sortorder" ng-show="propertyName === 'seats'" ng-class="{reverse: reverse}"></th>
+                                </tr>
+                                <tr  ng-repeat="i in result | orderBy:propertyName:reverse | filter : search">
+                                    <td>{{i.sectionLabel}}</td>
+                                    <td ng-if="i.label">{{i.label}}</td>
+                                    <td ng-if="i.price">{{i.price}}</td>
+                                    <td>{{i.seats}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

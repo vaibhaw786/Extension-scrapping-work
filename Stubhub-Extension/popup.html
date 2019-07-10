@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+
+<head>
+    <title>Ticket List Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="customjs.js"></script>
+    <script src="background.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+
+
+</head>
+
+<body style="width:600px;">
+    <div id="eventurl"></div>
+    <div id="message"></div>
+    <div id="messagedate"></div>
+    <div id="messagevenu"></div>
+    <div ng-if="LockedShow==1">
+        <h2 class="validationext">
+            Please click this extension on a Stubhub event page.
+        </h2>
+    </div>
+    <div ng-if="LockedShow==0">
+        <div id="loadering">
+            <span class="low"></span>
+        </div>
+        <div ng-if="loadershowfirst==1">
+            <center>
+                <img width="50" src="loader.gif">
+            </center>
+        </div>
+        <div class="Apilogin" style="width:600px; padding: 20px 20px;" ng-if="Apivalid==false">
+            <div class="ApiKeysEnter col-lg-8 col-sm-8 col-md-8 col-xs-8">
+                <input class=" form-control" type="text" placeholder="Enter License" autocomplete="off" ng-model="dataAPI" id="dataAPI">
+            </div>
+            <div class="submitbuttonapi col-lg-4 col-sm-4 col-md-4 col-xs-4">
+                <input class=" form-control btn btn-success apikeybutton" type="button" value="Enter" ng-click="saveApi()">
+            </div>
+            <hr> <span class="msgsss">
+                    {{errormsg}}
+                </span>
+            <div style="clear:both;"></div>
+        </div>
+        <div ng-if="Apivalid==true" style="width:600px; ">
+            <div class="mainlogo">
+                <center>
+                    <div class="logosdatashow">Stubhub</div>
+                    <img style="width: 100%; " src="logo.png">
+                </center>
+            </div>
+            <div class="delkey">
+                <a ng-click="deleteApi()"><i class="fa fa-trash"></i></a>
+            </div>
+            <div class="hidden"><pre>{{ActiveData|json}}</pre></div>
+
+            <div ng-if="ActiveData1.description!='Invalid User id' && ActiveData">
+
+                <div class="tabbingdatavalue">
+                    <ul ng-init="SouldData()" class="tabbingbox">
+                        <li ng-click="opencounter()" ng-class='{ div: 1, active: tabclass1 }'>Active List</li>
+                        <li ng-click="SouldData()" ng-class='{ div: 1, active: tabclass2 }'>Sold List<i class="activebookmark  fa fa-bookmark"></i></li>
+                    </ul>
+                </div>
+                <div style="width:600px; min-height: 500px;">
+
+                    <div ng-if="loadershow==1" class="loadinmainpage">
+                        <center><img src="loader.gif"></center>
+                    </div>
+                    <div ng-if="ActiveData && loadershow==0 && ActiveDataShow==1" class="result">
+                        <table class="table table-striped">
+                            <tr>
+                                <th><button ng-click="sortBy('zoneName')">Zone</button>
+                                    <span class="sortorder" ng-show="propertyName === 'zoneName'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.zoneName">
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('sectionName')">Section</button>
+                                    <span class="sortorder" ng-show="propertyName === 'sectionName'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.sectionName">
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('row')">Row</button>
+                                    <span class="sortorder" ng-show="propertyName === 'row'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.row">
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('quantity')">tix</button>
+                                    <span class="sortorder" ng-show="propertyName === 'quantity'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.quantity">
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('listingPrice.amount')">Price (USD)</button>
+                                    <span class="sortorder" ng-show="propertyName === 'listingPrice.amount'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.listingPrice.amount">
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('daysSinceListed')">days</button>
+                                    <span class="sortorder" ng-show="propertyName === 'daysSinceListed'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.daysSinceListed">
+                                </th>
+                            </tr>
+                            <tr ng-repeat="i in ActiveData.listing | filter:search | orderBy:propertyName:reverse">
+                                <td class="red">{{i.zoneName}}</td>
+
+                                <td class="red">{{i.sectionName}}</td>
+
+                                <td class="red">{{i.row}}</td>
+
+                                <td class="red">{{i.quantity}}</td>
+
+                                <td class="red">${{i.listingPrice.amount}}</td>
+                                <td class="red">{{i.daysSinceListed}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+
+
+
+                    <div ng-if="SoldData && loadershow==0 && SoldDataShow==1" class="result">
+
+                        <table class="table table-striped">
+                            <tr>
+                                <th><button ng-click="sortBy('section')">Section Name</button>
+                                    <span class="sortorder" ng-show="propertyName === 'section'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.section">
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('rows')">Row</button>
+                                    <span class="sortorder" ng-show="propertyName === 'rows'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.rows">
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('quantity')">tix</button>
+                                    <span class="sortorder" ng-show="propertyName === 'quantity'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.quantity">
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('displayPricePerTicket.amount')">Price</button>
+                                    <span class="sortorder" ng-show="propertyName === 'displayPricePerTicket.amount'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.displayPricePerTicket.amount">
+                                </th>
+                                <th>
+                                    <button ng-click="sortBy('deliveryOption')">Delivery</button>
+                                    <span class="sortorder" ng-show="propertyName === 'deliveryOption'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.deliveryOption">
+                                </th>
+                                <th width="30%">
+                                    <button ng-click="sortBy('transactionDate')">Date</button>
+                                    <span class="sortorder" ng-show="propertyName === 'transactionDate'" ng-class="{reverse: reverse}"></span>
+                                    <input ng-model="search.transactionDate">
+                                </th>
+                            </tr>
+                            <tr ng-repeat="i in SoldData | filter:search | orderBy:propertyName:reverse">
+                                <td class="red">{{i.section}}</td>
+
+                                <td class="red">{{i.rows}}</td>
+
+                                <td class="red">{{i.quantity}}</td>
+
+                                <td class="red">${{i.displayPricePerTicket.amount}}</td>
+
+                                <td class="red">{{i.deliveryOption | replace: '_':' '}}</td>
+
+                                <td class="red">{{i.transactionDate | date : "y-MM-dd HH:mm:ss" }}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+            <div ng-if="(ActiveData1.sales.numFound==0 || ActiveData1.description=='Invalid User id') && !ActiveData">
+                <br><br>
+                <center>
+                    <a ng-click="OpenNewTab(loginurl)" class="btn btn-info">Please Login First</a>
+                </center><br><br>
+
+            </div>
+        </div>
+</body>
+
+</html>

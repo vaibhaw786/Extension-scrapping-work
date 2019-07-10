@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+  <head>
+    <title>Ticket List Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="angular.min.js"></script>
+    <script src="background.js"></script>
+    <script src="jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body style="width:500px;">
+    <div ng-if="LockedShow==1" class="errormsgtab">Please click this extension on an Ticketfly event page.</div>
+    <div ng-if="LockedShow==0">
+    <div id="loadering"><span class="low"></span></div>
+    <div ng-if="loadershowfirst==1"><center><img width="50" src="loader.gif" ></center></div>
+    <div class="Apilogin ApiKeysEnter" style="width:500px; padding: 20px 20px;" ng-if="Apivalid==false">
+      <input autocomplete="off" class="col-xs-12 form-control" type="text" placeholder="Please Enter Api Key" ng-model="dataAPI" id="dataAPI">
+      <br><br>
+      <div class="submitbuttonapi col-lg-4 col-sm-4 col-md-4 col-xs-4"><input class="col-xs-12 form-control btn btn-success apikeybutton " type="button" value="Save Api" ng-click="saveApi()"></div>
+       <span class="msgsss">{{errormsg}}</span>
+      <div style="clear:both;"></div>
+    </div>
+    <div ng-if="Apivalid==true" style="width:500px; " >
+      <div>
+        <center>
+          <div class="logosdatashow">Ticketfly</div>
+          <img style="width: 100%; margin-bottom: 20px;" src="logo.png">
+        </center>
+      </div>
+      <div class="delkey"><a ng-click="deleteApi()"><i class="fa fa-trash"></i></a></div>
+      <div class="eventIDEnter "><input class="form-control" placeholder="Enter Event ID" ng-model="eventID" type="text" id="eventID"><input class="submitbutton form-control btn btn-success btnboxd"  type="button" value="Submit" ng-click="getSeats()">
+    <div style="clear:both;"></div></div>
+    <div style="width:500px; padding: 0px 0; margin-bottom: 45px;" >
+      <div ng-if="loadershow==1"><center><img src="loader.gif" ></center></div>
+      <div ng-if="myWelcome.sections && loadershow==0" class="result">
+        <div style="clear:both;"></div>
+        
+        
+        <div style="clear:both;"></div>
+        <table class="table table-striped">
+          <tr>
+            <th class=" hidden"><button ng-click="sortBy('sectionId')">Section</button>
+              <span class="sortorder" ng-show="propertyName === 'sectionId'" ng-class="{reverse: reverse}"></span>
+            </th>
+             <th>
+                  <button ng-click="sortBy('sectionName')">Type</button>
+                  <span class="sortorder" ng-show="propertyName === 'sectionName'" ng-class="{reverse: reverse}"></span>
+                </th> <th>
+                <button ng-click="sortBy('openCount')"># of Ticket</button>
+                <span class="sortorder" ng-show="propertyName === 'openCount'" ng-class="{reverse: reverse}"></span>
+              </th>
+                
+                  <th>
+                    <button ng-click="sortBy('priceRange.min')">Min (USD)</button>
+                    <span class="sortorder" ng-show="propertyName === 'priceRange.min'" ng-class="{reverse: reverse}"></span>
+                  </th>
+                    <th>
+                      <button ng-click="sortBy('priceRange.max')">Max (USD)</button>
+                      <span class="sortorder" ng-show="propertyName === 'priceRange.max'" ng-class="{reverse: reverse}"></span>
+                    </th>
+                    </tr>
+                    <tr  ng-repeat="i in myWelcome.sections | orderBy:propertyName:reverse">
+                      <td  class="red hidden">{{i.sectionId}}</td>
+                      <td class="red">{{i.sectionName}}</td><td  class="red">{{i.openCount}}</td>
+                      
+                      <td class="red">{{i.priceRange.min}}</td>
+                      <td class="red">{{i.priceRange.max}}</td>
+                    </tr>
+                  </table><div style="clear:both;"></div>
+                </div>
+                <div style="clear:both;"></div></div>
+              </div>
+              </body>
+            </html>

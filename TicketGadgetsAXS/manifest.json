@@ -1,0 +1,26 @@
+{
+	"background": {
+		"persistent": true,
+		"scripts": ["js/jquery.min.js", "js/background.js"]
+	},
+	"browser_action": {
+		"default_icon": "icons/icon_128.png",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [{
+		"js": ["./js/content.js", "./js/jquery.min.js"],
+		"matches": ["*://*.stubhub.com/*"]
+	}],
+	"description": "Axs counter with unlimited checks.",
+	"icons": {
+		"128": "icons/icon_128.png",
+		"16": "icons/icon_16.png",
+		"32": "icons/icon_32.png",
+		"48": "icons/icon_48.png"
+	},
+	"manifest_version": 2,
+	"name": "Ticket Gadgets Axs",
+	"options_page": "option.html",
+	"permissions": ["background", "declarativeContent", "webRequestBlocking",  "webRequest", "debugger", "activeTab", "background", "storage", "tabs", "*://*.axs.com/*", "*://www.ticketfly.com/*", "*://*.ticketmaster.com/*", "*://*.livenation.com/*", "*://*.stubhub.com/*", "*://quiktix.co/*", "*://snvdev.website/*", "*://ticketresaleteam.com/*","*://ticketgadgets.com/","*://www.ticketgadgets.com/"],
+	"version": "3.5"
+}

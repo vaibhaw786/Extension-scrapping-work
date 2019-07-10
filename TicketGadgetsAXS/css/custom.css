@@ -1,0 +1,211 @@
+::-webkit-scrollbar {
+        width: 2px;
+        height: 50px;
+}
+/* Track */
+ ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+}
+/* Handle */
+ ::-webkit-scrollbar-thumb {
+        background: #888;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+        background: #555;
+}
+p, a, li, td, th, body, html, div {
+    font-family: 'Encode Sans', sans-serif !important;
+}
+body {
+        width: 450px !important;
+        max-height: 300px;
+        overflow: auto;
+        color: white;
+        
+}
+.table.table{    margin-bottom: 2em;}
+.importantnote{     color: #fff !important;
+    font-size: 11px !important;
+    position: fixed;
+    bottom: 0px;
+    background: #1e1f8e; /* Old browsers */
+background: -moz-linear-gradient(left,  #1e1f8e 0%, #3e53a1 46%, #00acc1 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #1e1f8e 0%,#3e53a1 46%,#00acc1 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #1e1f8e 0%,#3e53a1 46%,#00acc1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e1f8e', endColorstr='#00acc1',GradientType=1 ); /* IE6-9 */
+
+  padding: 7px 10px;
+    border-radius: 7px;
+    margin-bottom: 2px;
+    width: 100%;
+    margin-left: -4px;
+}
+.importantnote hr{    margin: 8px 0px;
+    margin-top: 10px !important;
+    border: 1px solid;
+}
+
+p.h6.pl-3 {
+       display: none;
+}
+#result {
+        width: 100%;
+}
+#axs_total_count {
+        color: #000;
+}
+thead th { 
+        cursor: pointer;
+}
+td,
+th {
+        border: 1px solid #000 !important;
+        color: #000;
+}
+html body .salebutton {
+    width: 32% !important;
+    display: block;
+    float: left;
+    margin: 1px;
+    text-align: center;
+}
+#remain,
+#ticketfly_total_count {
+        color: white;
+}
+.axs {
+        background-color: #fff !important;
+}
+
+.ticketfly {
+        background-color: #fff !important;
+}
+
+.ticketmaster {
+        background-color: #fff !important;
+}
+
+.livenation {
+        background-color: #fff !important;
+}
+
+.link {
+        position: absolute;
+        top: 0px;
+        right: 2px;
+}
+
+#myList {
+        max-height: 85vh;
+        overflow: auto;
+}
+
+.nav-link {
+        padding: .25rem !important;
+}
+
+#result {
+        
+    margin: 0px !important;
+       padding: 0px 10px 30px;
+}
+
+/*.resultdata
+{
+        display: none;
+}
+*/
+.resultdata.active {
+        display: block
+}
+.errormsgtab{
+        padding: 38px;
+    text-align: center;
+    color:#4447B1 !important;
+    font-weight: bold;
+}
+.delkey i{color: #4447B1 !important; font-size: 14px;}
+.logosdatashow{position: absolute;
+    top: 13px;
+        margin-left: 222px;
+    font-size: 2.3em;
+    font-weight: bold; color: #4447B1 !important;}
+.apikeybox {
+        padding: 10px;
+}
+.errormsgsss{ font-size: 10px; color: red !important; }
+body .table tr:hover td{    background: #00ACC1 !important;
+    color: #fff !important;}
+
+
+body .table td{color:#636363 !important}
+body .table th,body .table td{ border-top:0 !important; border-bottom: 0 !important; border-left: 0px !important;  border-right: 0px !important; }
+body .table th{background:transparent !important;
+    border-bottom:2px solid #00B1FF !important}
+
+button{      font-size: 12px;
+    font-weight: bold;  width: 100%;
+    background: transparent;
+    border: 0px;
+    color: #393B9B;}
+    .delkey{      position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 10px;
+    text-transform: capitalize;
+    cursor: pointer;}
+    .salebutton{    cursor: pointer;     background: #46479D;
+    padding: 7px 15px;
+    border-radius: 5px;}
+    .salebutton.active{background: #E79E22;
+    
+    font-weight: 400; }
+    .filterchk{ margin-top: 10px;  }
+    .refreshpage{ float: right; margin-top: -10px; } 
+
+
+    input.col-xs-12.form-control.btn.btn-success.apikeybutton:hover {
+    color: #fff !important;
+    border: 0px !important;
+}
+ body input.col-xs-12.form-control.btn.btn-success.apikeybutton{background:#000; border: 0px !important;}
+
+
+ p,a,li,td,th,body,html,div{font-family: 'Encode Sans', sans-serif !important;}
+.Apilogin{background: rgba(70,72,157,1);
+background: -moz-linear-gradient(left, rgba(70,72,157,1) 0%, rgba(0,170,193,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(70,72,157,1)), color-stop(100%, rgba(0,170,193,1)));
+background: -webkit-linear-gradient(left, rgba(70,72,157,1) 0%, rgba(0,170,193,1) 100%);
+background: -o-linear-gradient(left, rgba(70,72,157,1) 0%, rgba(0,170,193,1) 100%);
+background: -ms-linear-gradient(left, rgba(70,72,157,1) 0%, rgba(0,170,193,1) 100%);
+background: linear-gradient(to right, rgba(70,72,157,1) 0%, rgba(0,170,193,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#46489d', endColorstr='#00aac1', GradientType=1 );}
+.ApiKeysEnter {
+  width: 100% !important;
+  
+  margin: 0 0 !important;
+}
+.ApiKeysEnter input{
+color:#fff !important;
+  border-radius: 24px; border: 1px solid transparent; background: rgba(212, 212, 212, 0.4) !important; }
+body .apikeybutton,body .apikeybutton:hover{float: right;
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    width: 100px; background: #E79E22 !IMPORTANT;}
+
+.ApiKeysEnter input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+.ApiKeysEnter input::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
+}
+.ApiKeysEnter input:-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
+}
+.ApiKeysEnter input:-moz-placeholder { /* Firefox 18- */
+  color: #fff;
+}
+
+p,a,li,td,th,body,html,div{font-family: 'Encode Sans', sans-serif !important;}
